@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yo Google, hire me!</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+
+    <script
+      src="https://kit.fontawesome.com/eb8f2ff2e9.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ? The glow-effect for the arrows -->
+
+    <style>
+      #glow {
+        font-size: 80px;
+        color: #fff;
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #db4437,
+            0 0 40px #db4437, 0 0 50px #db4437, 0 0 60px #db4437,
+            0 0 70px #db4437;
+        }
+
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #db4437, 0 0 40px #db4437,
+            0 0 50px #db4437, 0 0 60px #db4437, 0 0 70px #db4437,
+            0 0 80px #db4437;
+        }
+      }
+    </style>
+
+    <!-- ? -------------------------------------------- -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ! ---------------------------- Here comes the HEADER & Nav-bar ----------------------------  -->
+
+    <header class="navbar">
+      <div class="left">
+        <a href="Google.html">
+          <img
+            src="/assets/images/google-logo-only-chars.png"
+            alt="The Google Logo"
+          />
+        </a>
+      </div>
+      <nav class="right">
+        <!-- <li class="current-page"> -->
+        <a href="Google.html">Info</a>
+        <!-- </li> -->
+        <a href="YouTube.html">YouTube</a>
+        <a href="Contact.html">Contact</a>
+        <a href="About-me.html">About me</a>
+      </nav>
+
+      <!-- ! --- For mobile only: --- -->
+
+      <div class="ham">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+
+      <!-- ! -------------------------- -->
+    </header>
+
+    <!-- ! -------------------------------------- End of HEADER ------------------------------------- -->
+
+    <main>
+      <!-- ? ------------------------------ Here comes the h1-section ------------------------------  -->
+
+      <div class="da-special">
+        <h1 class="grid-item-two">
+          <span>I</span>
+          <span>l</span><span>o</span><span>v</span><span>e</span> <span>y</span
+          ><span>o</span><span>u</span><span>r</span> <span>s</span
+          ><span>t</span><span>y</span><span>l</span><span>e</span
+          ><span>!</span>
+        </h1>
+      </div>
+
+      <!-- ? ---------------------------- Here comes the CARD-Section -----------------------------  -->
+
+      <div class="gallery-container">
+        <div class="card" id="TR">
+          <img
+            src="/assets/images/Puzzle-pieces/top-right.jpg"
+            alt="Google-HQ top right puzzle-piece"
+          />
+          <p class="first-text">Start your journey <em>-here</em></p>
+          <p class="hover-display-visible">🤫 Pssst... go left!</p>
+        </div>
+
+        <div class="card" id="TC">
+          <img
+            src="/assets/images/Puzzle-pieces/top-center.jpg"
+            alt="Google-HQ top center puzzle-piece"
+          />
+          <p class="first-text">Hover me next...</p>
+          <p class="hover-display-visible">👈🏻 You're not there yet...</p>
+        </div>
+
+        <div class="card" id="TL">
+          <img
+            src="/assets/images/Puzzle-pieces/top-left.jpg"
+            alt="Google-HQ top left puzzle-piece"
+          />
+          <p class="first-text">You get the idea...</p>
+          <p class="hover-display-visible" id="glow">
+            <i
+              class="fa-solid fa-arrow-down"
+              style="color: var(--Google-red-color)"
+            ></i>
+          </p>
+        </div>
+
+        <div class="card" id="CL">
+          <img
+            src="/assets/images/Puzzle-pieces/center-left.jpg"
+            alt="Google-HQ center left puzzle-piece"
+          />
+          <p class="hover-display-visible" id="glow">
+            <i
+              class="fa-solid fa-arrow-down"
+              style="color: var(--Google-yellow-color)"
+            ></i>
+          </p>
+        </div>
+
+        <div class="card" id="BL">
+          <img
+            src="/assets/images/Puzzle-pieces/bottom-left.jpg"
+            alt="Google-HQ bottom left puzzle-piece"
+          />
+          <p class="hover-display-visible" id="glow">
+            <i
+              class="fa-solid fa-arrow-right"
+              style="color: var(--Google-blue-color)"
+            ></i>
+          </p>
+        </div>
+
+        <div class="card" id="BC">
+          <img
+            src="/assets/images/Puzzle-pieces/bottom-center.jpg"
+            alt="Google-HQ bottom center puzzle-piece"
+          />
+          <p class="hover-display-visible" id="glow">
+            <i
+              class="fa-solid fa-arrow-right"
+              style="color: var(--Google-green-color)"
+            ></i>
+          </p>
+        </div>
+
+        <div class="card" id="BR">
+          <img
+            src="/assets/images/Puzzle-pieces/bottom-right.jpg"
+            alt="Google-HQ bottom right puzzle-piece"
+          />
+          <p class="hover-display-visible" id="glow">
+            <i
+              class="fa-solid fa-arrow-up"
+              style="color: var(--Google-red-color)"
+            ></i>
+          </p>
+        </div>
+
+        <div class="card" id="CR">
+          <img
+            src="/assets/images/Puzzle-pieces/center-right.jpg"
+            alt="Google-HQ center right puzzle-piece"
+          />
+          <p class="hover-display-visible" id="glow">
+            <i
+              class="fa-solid fa-arrow-left"
+              style="color: var(--Google-blue-color)"
+            ></i>
+          </p>
+        </div>
+
+        <div class="card" id="AC">
+          <img
+            src="/assets/images/Puzzle-pieces/absolute-center.jpg"
+            alt="Google-HQ absolute center puzzle-piece"
+          />
+          <p class="hover-display-visible">
+            <a href="YouTube.html"
+              >Click <span><br />me!</span></a
+            >
+            <img src="/assets/images/YT-Foyer.jpg" alt="YouTube-HQ" />
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- ! ----------------------------------- Here comes the FOOTER ----------------------------------- -->
+
+    <footer>
+      <div class="F-us-sec">
+        Follow us
+        <a href="https://www.instagram.com/google/?hl=en" target="_blank"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://www.youtube.com/google" target="_blank"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
+        <a
+          href="https://twitter.com/Google?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+          target="_blank"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a href="https://www.facebook.com/Google/" target="_blank"
+          ><i class="fa-brands fa-square-facebook"></i
+        ></a>
+        <a href="https://www.linkedin.com/company/google/" target="_blank"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+
+      <p class="f-grid-two">
+        _______________________________________________________________________________________________________________________________________________________________________________________
+      </p>
+
+      <div class="f-grid-container-two">
+        <p class="f-grid-three" style="font-weight: 600">More about us</p>
+        <p class="f-grid-four" style="font-weight: 600">Press</p>
+        <p class="f-grid-five" style="font-weight: 600">Guidelines</p>
+        <p class="f-grid-six" style="font-weight: 600">Responsibility</p>
+
+        <a href="#"
+          ><p class="f-grid-seven" style="color: var(--Google-info-grey-color)">
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p class="f-grid-eight" style="color: var(--Google-info-grey-color)">
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p class="f-grid-nine" style="color: var(--Google-info-grey-color)">
+            and so on
+          </p></a
+        >
+        <a href="#"
+          ><p class="f-grid-ten" style="color: var(--Google-info-grey-color)">
+            on and on and on
+          </p></a
+        >
+
+        <a href="#"
+          ><p
+            class="f-grid-eleven"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twelve"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-thirteen"
+            style="color: var(--Google-info-grey-color)"
+          >
+            and so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-fourteen"
+            style="color: var(--Google-info-grey-color)"
+          >
+            on and on and on
+          </p></a
+        >
+
+        <a href="#"
+          ><p
+            class="f-grid-fifteen"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-sixteen"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-seventeen"
+            style="color: var(--Google-info-grey-color)"
+          >
+            and so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-eighteen"
+            style="color: var(--Google-info-grey-color)"
+          >
+            on and on and on
+          </p></a
+        >
+
+        <a href="#"
+          ><p
+            class="f-grid-nineteen"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twenty"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twentyone"
+            style="color: var(--Google-info-grey-color)"
+          >
+            and so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twentytwo"
+            style="color: var(--Google-info-grey-color)"
+          >
+            on and on and on
+          </p></a
+        >
+
+        <a href="#"
+          ><p
+            class="f-grid-twentythree"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twentyfour"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twentyfive"
+            style="color: var(--Google-info-grey-color)"
+          >
+            and so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twentysix"
+            style="color: var(--Google-info-grey-color)"
+          >
+            on and on and on
+          </p></a
+        >
+
+        <a href="#"
+          ><p
+            class="f-grid-twentyseven"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twentyeight"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-twentynine"
+            style="color: var(--Google-info-grey-color)"
+          >
+            and so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-thirty"
+            style="color: var(--Google-info-grey-color)"
+          >
+            on and on and on
+          </p></a
+        >
+
+        <a href="#"
+          ><p
+            class="f-grid-thirtyone"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-thirtytwo"
+            style="color: var(--Google-info-grey-color)"
+          >
+            so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-thirtythree"
+            style="color: var(--Google-info-grey-color)"
+          >
+            and so on
+          </p></a
+        >
+        <a href="#"
+          ><p
+            class="f-grid-thirtyfour"
+            style="color: var(--Google-info-grey-color)"
+          >
+            on and on and on
+          </p></a
+        >
+      </div>
+
+      <p class="f-grid-thirtyfive">
+        _______________________________________________________________________________________________________________________________________________________________________________________
+      </p>
+
+      <div class="F-us-sec2">
+        <a href="Google.html"><p class="f-sec2-logo">Google</p></a>
+        <a href="https://support.google.com/?hl=ALL" target="_blank"
+          ><i class="fa-solid fa-circle-question"></i
+        ></a>
+        <a href="https://support.google.com/?hl=ALL" target="_blank"
+          ><p>Help</p></a
+        >
+        <a href="https://www.youtube.com/google" target="_blank"
+          ><p>Data protection</p></a
+        >
+        <a href="https://policies.google.com/terms" target="_blank"
+          ><p>Terms of Use</p></a
+        >
+        <a href="https://www.google.de/contact/impressum.html" target="_blank"
+          ><p>Imprint</p></a
+        >
+      </div>
+    </footer>
+    <!-- ! ------------------------------------ End of Footer ----------------------------------------- -->
+  </body>
+</html>

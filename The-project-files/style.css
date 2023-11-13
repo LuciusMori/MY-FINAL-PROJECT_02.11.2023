@@ -1,0 +1,535 @@
+@font-face {
+  font-family: "Product Sans";
+  src: url("../fonts/ProductSans-Regular.ttf");
+}
+
+/* @font-face {
+  font-family: "Google Sans";
+  src: url("../fonts/GoogleSans-Regular.ttf");
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Product Sans", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+  background-color: var(--standard-white-bg-color);
+
+  /* ! VARIABLES */
+
+  --standard-white-bg-color: #ffffff;
+  --YT-trans_black-bg-color: rgba(20,20,20,255);
+  --Google-info-grey-color: #5f6368;
+  --Google-lightgrey-bg-color: rgb(242, 242, 242);
+  --Google-footer-hover-and-active-bg-color: #c9cbce;
+
+  --Google-blue-color: #4285f4;
+  --Google-red-color: #db4437;
+  --Google-yellow-color: #f4b400;
+  --Google-green-color: #0f9d58;
+}
+
+/* ! ATTENTION: in this case I'm starting with DESKTOP FIRST */
+
+/* ! -------------------------------- Here comes the NAVBAR -------------------------------- */
+
+.navbar {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+
+  /* * I primarily decided to use another grid to align the h1-section,
+     * since I didn't like how the positioning behaves...
+     * But it didn't work out the way I envisioned it to... */
+
+  /* display: grid;
+  grid-template-columns: 1fr 50% 40%;
+  grid-template-rows: 70px 70px; */
+
+  /* -------------------------------------------- */
+}
+
+.navbar .right {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  align-items: center;
+
+  /* grid-column: 2 / 3;
+  grid-row: 1 / 2; */
+}
+
+.navbar .left img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.navbar .left {
+  width: 10%;
+  margin-left: 1rem;
+
+  /* grid-column: 1 / 2;
+  grid-row: 1 / 2; */
+}
+
+.navbar .right a {
+  transition: 0.1s all;
+  font-size: large;
+  color: var(--Google-info-grey-color);
+}
+
+.navbar .right a:hover {
+  /* width: 100px;
+  height: 70px; */
+  background-color: var(--Google-lightgrey-bg-color);
+  border-radius: 5px;
+  padding: 1.5rem;
+  /* * ---> The padding moves the entire element up and down (influencing the other elements as well)... 
+      *     just like it does in the footer!
+      *     If I do not use padding, the bg-box is just as big as its content (which is not, what I want to achieve!).
+      *     Width & Height do not work either. */
+}
+
+.navbar .left img:hover {
+  /* transform: scale(1.5); */
+  background-color: var(--Google-lightgrey-bg-color);
+  border-radius: 5px;
+}
+
+.navbar .right a:active
+ {
+  color: black;
+  border-radius: 5px;
+  border: 2px solid var(--Google-blue-color);
+}
+
+.navbar .left img:active {
+  border: 2px solid var(--Google-blue-color);
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ? I was trying to find a way to add an underline for the current or currently active page,
+?     but just couldn't figure out how to... without using JS...
+
+a .current-page {
+  text-decoration: underline;
+}
+
+a .current-page:hover, a .current-page:focus, a .current-page:active {
+  text-decoration: underline;
+}  */
+
+/* ? --- HAM-menu (for mobile) --- */
+
+.header .ham {
+  display: none;
+}
+
+.header .ham .box {
+  background-color: black;
+  width: 2.5rem;
+  height: 0.4rem;
+  margin: 0.5rem;
+}
+
+/* ! ----------------------------------- End of NAVBAR --------------------------------------- */
+
+/* ? --------------------------- Here comes the h1-styling --------------------------- */
+
+main .da-special h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 4rem;
+}
+
+.da-special {
+  position:
+  /* * I have no clue, how this is even able to work, but it does...
+  *    The position-property's value 'absolute' doesn't do what it's supposed to
+  *    (in this case). If I remove 'position' completely I end up with the same result.
+  *    But if I leave the property without any value, it's totally fine! WTF? */
+
+  /* top: 50%; 
+  left: 50%; */
+  transform: translate(-50%, -50%); 
+  font-size: 2.5em;
+}
+
+/* .grid-item-two {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+} */
+
+.da-special:hover h1{ 
+  animation:  shake 0.8s  ; 
+} 
+
+@keyframes shake{ 
+  0%{ 
+    transform: translateX(0) 
+  } 
+  25%{ 
+    transform: translateX(25px); 
+  } 
+    
+  50%{ 
+    transform: translateX(-25px); 
+  } 
+  100%{ 
+    transform: translateX(0px); 
+  } 
+} 
+
+main h1 span:nth-of-type(1),
+:nth-of-type(4),
+:nth-of-type(6),
+:nth-of-type(9),
+:nth-of-type(11),
+:nth-of-type(14) {
+  color: var(--Google-blue-color);
+}
+
+main h1 span:nth-of-type(2),
+:nth-of-type(7),
+:nth-of-type(12) {
+  color: var(--Google-red-color);
+}
+
+main h1 span:nth-of-type(3),
+:nth-of-type(8),
+:nth-of-type(13) {
+  color: var(--Google-yellow-color);
+}
+
+main h1 span:nth-of-type(5),
+:nth-of-type(10),
+:nth-of-type(15) {
+  color: var(--Google-green-color);
+}
+
+/* ? main h1 span:nth-last-of-type(13), :nth-last-of-type(8) { color: var(--Google-yellow-color); }
+
+  --> I have no clue what is going on here... it not only picks up the chosen letters insider the h1-tags, 
+      but also the second div's text "Hover me.." and "You're not there yet..."! How?
+  --> "main h1:nth-last-of-type(13), :nth-last-of-type(8) { color: var(--Google-yellow-color); }" doesn't 
+      work either! I am clearly selecting either the h1-element or its span-children. WTF? 
+} */
+/* ! --> WOOOOW! I accidentally used nth-LAST-of-type and just stumbled upon it right now...
+        ! I'm gonna leave this comment there to remind myself of the very fact, that lil' details
+        ! can cause major issues... */
+
+/* ? ---------------------------------- End of h1-styling ---------------------------------- */
+
+/* ? -------------------------------- Here comes the CARD-Section -------------------------------- */
+
+.gallery-container {
+  margin: 0 auto;
+  width: 65%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr); */
+
+  grid-template-areas:
+
+    'TL TC TR'
+    'CL AC CR'
+    'BL BC BR';
+
+  /* gap: 1rem; */
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 333px;
+  height: 216px;
+  object-fit: cover;
+}
+
+.card p img {
+  width: 333px;
+  height: 216px;
+  object-fit: cover;
+}
+
+.card .hover-display-visible {
+  /* background-color: var(--YT-trans_black-bg-color); */
+  background-color: rgba(20,20,20,0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+
+  transition: 1.5s all;
+
+  font-size: 2rem;
+  color: var(--standard-white-bg-color);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.gallery-container:hover {
+  gap: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+/* ? --- The YT-Card-Section --- */
+
+#AC:hover {
+  transform: scale(3.1);
+}
+
+#AC .hover-display-visible a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--standard-white-bg-color);
+  font-size: 3rem;
+}
+
+#AC .hover-display-visible a:active {
+  color: var(--Google-red-color);
+}
+
+#AC .hover-display-visible a span {
+  color: var(--Google-red-color);
+}
+
+#AC .hover-display-visible a span:active {
+  color: var(--standard-white-bg-color);
+}
+
+/* ? --------------------------- */
+
+.card .hover-display-visible:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.gallery-container .card {
+  position: relative;
+}
+
+.first-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: large;
+  color: var(--standard-white-bg-color);
+}
+
+em {
+  color: var(--Google-red-color);
+}
+
+#TL p:nth-child(2) {
+  color: var(--Google-yellow-color);
+  text-shadow: 3px 3px black;
+}
+
+#TR {
+  grid-area: TR;
+  /* border-top-right-radius: 10px; */
+  /* * --> Doesn't have any effect whatsoever... why? */
+}
+
+#TC {
+  grid-area: TC;
+}
+
+#TL {
+  grid-area: TL;
+  /* border-top-left-radius: 10px; */
+  /* * --> Same... */
+}
+
+#CL {
+  grid-area: CL;
+}
+
+#BL {
+  grid-area: BL;
+  /* border-bottom-left-radius: 10px; */
+  /* * --> Same... */
+}
+
+#BC {
+  grid-area: BC;
+}
+
+#BR {
+  grid-area: BR;
+  /* border-bottom-right-radius: 10px; */
+  /* * --> Same... */
+  
+}
+
+#CR {
+  grid-area: CR;
+}
+
+#AC {
+  grid-area: AC;
+}
+
+/* ! -------------------------------- Here comes the FOOTER -------------------------------- */
+
+footer {
+  display: flex;
+
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  margin-top: 15rem;
+  /* padding: 1rem 9rem; */
+  height: 60rem;
+  background-color: var(--Google-lightgrey-bg-color);
+
+  display: grid;
+  grid-template-columns: 15% 35% 35% 15%;
+  grid-template-rows: 15% 5% 1fr 5% 15%;
+}
+
+.F-us-sec {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: left; */
+  /* padding-left: 180px; */
+  /* width: 35%; */
+  
+  font-size: x-large;
+
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.F-us-sec i {
+  color: black;
+}
+
+.F-us-sec a:hover {
+  background-color: rgb(206, 204, 204);
+  /* padding: 1rem; */
+  /* * ---> AGAIN: The padding moves the entire element up and down (influencing the other elements as well)... 
+      *     just like it does in the navbar!
+      *     If I do not use padding, the bg-box is just as big as its content (which is not, what I want to achieve!).
+      *     Width & Height do not work either. So, I decided to comment it out - for now... */
+}
+
+.F-us-sec2 {
+  display: flex;
+  justify-content: space-between;
+  
+  font-size: large;
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+
+  color: var(--Google-info-grey-color);
+}
+
+.F-us-sec2 i,
+.F-us-sec2 a {
+  color: var(--Google-info-grey-color);
+}
+
+.F-us-sec2 .f-sec2-logo:hover {
+  background-color: var(--Google-footer-hover-and-active-bg-color);
+  border-radius: 5px;
+}
+
+.F-us-sec2 a p:nth-of-type(1):hover {
+  color: black;
+}
+
+/* * What's wrong hier?
+  .f-grid-container-two a p:hover {
+  color: black;
+} */
+
+.F-us-sec2 a:active {
+  border-radius: 5px;
+  border: 2px solid var(--Google-blue-color);
+  background-color: var(--Google-footer-hover-and-active-bg-color);
+}
+
+.f-grid-two {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+.f-grid-thirtyfive {
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
+}
+
+.f-grid-container-two {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  row-gap: 1rem;
+  font-size: large;
+}
+
+.f-grid-three {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.f-grid-four {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.f-grid-five {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.f-grid-six {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  color: black;
+}

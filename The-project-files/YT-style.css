@@ -1,0 +1,813 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+
+  color: var(--YT-spacial-blue-label-color);
+  background-color: var(--YT-trans_black-bg-color);
+
+  /* ! VARIABLES */
+
+  --YT-trans_black-bg-color: #141414;
+  --YT-dark_grey-tab-bg-color: #323232;
+  --YT-highlighted-tab-grey-color: #4c4c4c;
+  --YT-standard-white-color: #fff;
+  --YT-spacial-blue-label-color: #1466b8;
+  --YT-red-color: #ff0000;
+}
+
+body {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 13.5% 1fr;
+  grid-template-rows: 139px 1fr;
+
+  grid-template-areas:
+    "S-bar navbar"
+    "S-bar main";
+
+  gap: 1.3rem;
+
+  /* * This was my first attempt. Then I reckoned that it would be smarter to 
+   * nest another grid inside the body's one, so I'd have much better control
+   * over the individual grid-items down the line... */
+
+  /* display: grid;
+  
+  grid-template-columns: 12.5% 1fr 1fr 1fr 1fr;
+  grid-template-rows: 150px 700px 40px 560px 700px;
+
+  grid-template-areas:
+    "S-bar navbar navbar navbar navbar"
+    "S-bar vid1 vid1 vid1 vid1"
+    "S-bar SH-TL SH-TL SH-TL SH-TL"
+    "S-bar shorts shorts shorts shorts"
+    "S-bar vid2 vid2 vid2 vid2";
+
+  gap: 1.5rem;
+
+}
+
+#navbar {
+  grid-area: navbar;
+}
+
+#S-bar {
+  grid-area: S-bar;
+}
+
+#vid1 {
+  grid-area: vid1; */
+}
+
+#main-page {
+  grid-area: main;
+}
+
+/* ! ----------------------- Here are header & navbar ----------------------- */
+
+header {
+  position: fixed;
+  width: 87.5%;
+  /* * I could have worked with "calc (100% - the sidebar's width)" 
+     * but I decided to take this path */
+  top: 0;
+  right: 0;
+  background-color: var(--YT-trans_black-bg-color);
+  padding-top: 1.5rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 5rem;
+}
+
+header nav div ul {
+  display: flex;
+}
+
+header nav div ul li {
+  display: flex;
+  /* width: 100%; */
+
+  list-style: none;
+  /* margin: 0 1rem; */
+}
+
+header nav div ul li a {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+
+  text-decoration: none;
+  color: var(--YT-standard-white-color);
+  font-size: 1.6rem;
+  /* font-weight: 500; */
+  padding: 1rem 0;
+  /* width: 100%; */
+}
+
+/* ? -------------------- The searchbar -------------------- */
+
+.center-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 37.5rem;
+}
+
+.center-nav input[type="text"] {
+  width: 51.5rem;
+  height: 2rem;
+
+  border: none;
+  padding: 0.5rem;
+  margin-right: 1rem;
+
+  background-color: var(--YT-trans_black-bg-color);
+  color: var(--YT-standard-white-color);
+}
+
+.center-nav ul li:first-child a {
+  border: 1px solid var(--YT-spacial-blue-label-color);
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+/* .center-nav ul li:first-child a:active {
+  padding-left: 40px;
+  border-radius: 20px;
+} */
+
+/* ? ------ The magnifying glass icon (inside the searchbar) ------ */
+
+.center-nav ul li:first-child a i {
+  /* width: 25px;
+     height: 25px;
+     * This just widens the entire box, which is not what I want...*/
+
+  padding: 0 25px;
+  /* * margin-top and -bottom also widen the entire thing... hmmm... */
+
+  /* background-color: var(--YT-dark_grey-tab-bg-color); */
+  /* * I just wasn't able replicating the same look without using JS... */
+}
+
+/* ? ------------------------------------------------------------- */
+
+/* ? ------------ The mic-icon ------------ */
+
+.center-nav ul li:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-nav ul li:last-child a {
+  margin: 0 1.5rem;
+  background-color: var(--YT-dark_grey-tab-bg-color);
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  display: flex;
+}
+
+.center-nav ul li:last-child a:hover {
+  background-color: var(--YT-highlighted-tab-grey-color);
+}
+
+.center-nav ul li:last-child a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 9px;
+}
+
+/* ? ---------------------------------------- */
+
+/* ? --------------------- End of searchbar ------------------------ */
+
+/* ? --- Icons in the top right corner --- */
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.right-nav ul li a {
+  margin: 0 1.5rem;
+}
+
+/* ? --- Uplaod- and bell-icon */
+
+.right-nav ul li:nth-of-type(1) a:hover,
+.right-nav ul li:nth-of-type(2) a:hover {
+  /* background-color: var(--YT-highlighted-tab-grey-color);
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; */
+
+  /* * Unfortunately something doesn't work the way it's supposed to...
+   * As I hover over the icons they move to the left (because I used padding
+   * to achieve the bg-color-effect. Since I'm running out of time I decided
+   * to just get rid of it completely (for now).*/
+
+  display: flex;
+}
+
+/* * --> The profile-pic isn't supposed to have a highlight-effect at all,
+       * which is why I chose this path of selecting elements... */
+
+.right-nav ul li:nth-of-type(1) a:hover a i,
+.right-nav ul li:nth-of-type(2) a:hover a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+}
+
+/* ? -------------------------- */
+
+/* ? --------------------------------------- */
+
+/* ? - This is the "suggestions"-category which is integrated into the navbar - */
+
+.suggestions {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  /* display: inline-block; */
+}
+
+.suggestions ul li:hover {
+  cursor: pointer;
+  background-color: var(--YT-highlighted-tab-grey-color);
+}
+
+/* .suggestions ul li a:active {
+  color: var(--YT-trans_black-bg-color);
+  background-color: var(--YT-spacial-blue-label-color);
+  
+  font-size: 1.5rem;
+  padding: .9rem 1.5rem;
+  
+  border-radius: 10px;
+} 
+* --> Ehh... no! Not like this! 
+    * 1. I don't want the effect to move the entire line by widening 
+    * its parent element!
+    * 2. The effect - once being triggered - has to stay permanent(ly) instead 
+    * of vanishing OnMouseUp... 
+*/
+
+.suggestions ul li {
+  font-size: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  background-color: var(--YT-dark_grey-tab-bg-color);
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+}
+
+.suggestions ul li a {
+  text-decoration: none;
+  color: var(--YT-spacial-blue-label-color);
+}
+
+/* ? ------------------------------------------------------------------------- */
+
+/* ! ------------------------ End of header & navbar ------------------------- */
+
+/* ! ----------- Here's the vertical sidebar (+ integrated footer) ----------- */
+
+.vertical-side-bar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 12.5%;
+  /* height: 100vh; */
+  height: 100%;
+
+  background-color: var(--YT-trans_black-bg-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  /* justify-content: center; */
+
+  overflow: auto;
+  padding: 20px 2px 10px 15px;
+  visibility: hidden;
+
+  /* * The vertical sidebar created a horizontal scrollbar automatically since I
+     * gave it a fixed width. As the content grew bigger (or wider I should say)
+     * it didn't have any space to go, so a scrollbar had to appear... But YouTube's
+     * sidebar doesn't have a horizontal scrollbar which is why I had to permanently
+     * hide the overflow on the main-axis: */
+
+  overflow-x: hidden;
+
+  /* overflow-y: scroll;
+     max-height: 1000px; 
+  * --> I'm just playing around and checking how things work... By the looks of things
+      * there is no way to determine a fixed height for the scrollbar-thumb; it seems
+      * to adapt automatically depending on the "amount of content" which should be the
+      * reason for YouTube's scrollbar being much smaller (in height) than mine. I don't
+      * have anywhere near as many videos in my video-section as the original has... */
+}
+
+/* * --> Since only the "main-video-section's" scrollbar is visibile at all times,
+      * I had to hide the entire vertical-side-bar's visibility and make everything 
+      * within it visibile - other than the scrollbar itself. Its visibility is only 
+      * being triggered while hovering over this section.  */
+
+.vertical-side-bar div,
+.vertical-side-bar footer,
+.vertical-side-bar:hover {
+  visibility: visible;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #717171;
+  border-radius: 10px;
+}
+
+/* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px black;
+  border-radius: 10px;
+} */
+
+.vertical-side-bar ul li,
+.suggestions ul li {
+  display: inline-block;
+}
+
+.vertical-side-bar div {
+  font-size: 1.5rem;
+}
+
+.vertical-side-bar div i {
+  font-size: 2rem;
+  color: var(--YT-standard-white-color);
+  padding: 1rem;
+}
+
+.vertical-side-bar div img {
+  /* padding: 1rem; */
+  margin-left: 0.8rem;
+}
+
+.vertical-side-bar div:first-child ul li {
+  margin-bottom: 2rem;
+}
+
+/* * Fixing problematic elements or rather their relation to one another haha */
+
+.vertical-side-bar div:nth-child(3) {
+  padding-left: 1.3rem;
+  margin-left: 0.8rem;
+  /* margin-top: 0.4rem; */
+}
+
+.vertical-side-bar div:nth-child(3) img {
+  margin-left: -1.6rem;
+}
+
+.vertical-side-bar div:nth-child(3) span {
+  /* line-height: normal; */
+  margin-bottom: 0.5rem;
+  margin-left: 0.8rem;
+}
+
+.vertical-side-bar div:nth-child(4) {
+  margin-top: 0.5rem;
+}
+
+.vertical-side-bar div:nth-child(4) span {
+  margin-left: 0.5rem;
+}
+
+.vertical-side-bar div:nth-child(5) {
+  margin-top: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.vertical-side-bar div:nth-child(8),
+.vertical-side-bar div:nth-child(9) {
+  margin-left: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.vertical-side-bar div:nth-child(5) span {
+  margin-left: 1.5rem;
+}
+
+.vertical-side-bar div:nth-child(10) {
+  margin-left: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.vertical-side-bar div:nth-child(10) span {
+  margin-left: 0.9rem;
+}
+
+.vertical-side-bar div:nth-child(7) #special-two,
+.vertical-side-bar div:nth-child(15),
+.vertical-side-bar div:nth-child(17),
+.vertical-side-bar div:nth-child(8) span,
+.vertical-side-bar div:nth-child(27) {
+  margin-left: 0.9rem;
+}
+
+.vertical-side-bar div:nth-child(7) #special-two,
+.vertical-side-bar div:nth-child(15) #special-one {
+  /* * I had to give these both span-items either a class or an id, because there
+     * is another span-item which is also the 7th-div-child - it would be "TheDooo".
+     * Of course I could have gone the easier route of using combinator selectors in 
+     * this case but those ids came in clutch multiple times... */
+  display: inline-block;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  font-weight: bold;
+  font-size: large;
+  word-spacing: 1rem;
+}
+
+.vertical-side-bar div:nth-child(27),
+.vertical-side-bar div:nth-child(17) {
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  font-weight: bold;
+  font-size: large;
+}
+
+/* * ------------------------------------------------------------------------- */
+
+.sidebar-categories {
+  display: flex;
+  flex-direction: column;
+
+  /* position: relative; */
+}
+
+.sidebar-categories div {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-categories div img {
+  border-radius: 50%;
+}
+
+/* .sidebar-categories div:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  height: 5rem;
+} */
+
+/* * Well, didn't work out... */
+
+.sidebar-categories div span,
+.sidebar-categories div #problem-candidate,
+.sidebar-categories div #problem-candidate4,
+.sidebar-categories div #problem-candidate5,
+.sidebar-categories div #problem-candidate6 {
+  margin-left: 2.5rem;
+}
+
+/* .sidebar-categories div #problem-candidate4 img {
+  margin-left: 5rem !important;
+  * Hmmm... I obviously overlook something... 
+  * The "Blacktail Studio"-item still doesn't behave the way it should
+  * and not even the imp-flag can fix it...} */
+
+.sidebar-categories div #problem-candidate2 {
+  margin-left: 1.7rem;
+}
+
+.sidebar-categories div #problem-candidate3 {
+  margin-top: -1rem;
+}
+
+.sidebar-categories div {
+  margin-left: 0.5rem;
+}
+
+.sidebar-categories #problem-candidate7 {
+  margin-left: 0.5rem;
+}
+
+/* .sidebar-categories #lower-weight,
+#problem-candidate7 {
+  font-weight: 400 !important;
+} 
+* No clue what's going on right now. I need a break to fix this...*/
+
+/* .sidebar-categories ~ div {
+  color: green;
+} */
+
+footer p {
+  margin: 5rem 0 5rem 3.5rem;
+}
+
+footer p a {
+  text-decoration: none;
+  color: var(--YT-standard-white-color);
+  font-size: 1.5rem;
+}
+
+footer p a span {
+  color: var(--YT-red-color);
+}
+
+footer p a:hover {
+  border: 1px solid var(--YT-spacial-blue-label-color);
+  border-radius: 5px;
+  /* padding: 1rem 1.5rem; */
+}
+
+/* ! ------------------------ End of vertical sidebar ------------------------ */
+
+/* ! -------------------- Here's the main-(video)-section -------------------- */
+
+main {
+  margin-top: 15.2rem;
+  margin-left: 26.5rem;
+  /* overflow-x: hidden; */
+}
+
+.main-page {
+  /* display: flex;
+  flex-direction: column;
+  
+  top: 0;
+  right: 0; */
+
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 560px); */
+  /* * Instead of using a value like 4x repeat I could use "auto-fit"
+     * so the grid-layout becomes responsive without using a media query...
+     * But this value or flag would destroy my overall construction. */
+  /* grid-template-rows: 300px 300px 50px 420px 50px 300px; */
+  /* grid-template-rows: 370px 332px 352px 312px 312px 332px 332px 332px 120px; */
+  grid-template-rows: repeat(9, 1fr);
+
+  grid-template-areas:
+    "IT1  IT10  IT15  IT23"
+    "IT2  IT11  IT16  IT24"
+    "IT3        IT17      "
+    "IT4  IT12  IT18  IT25"
+    "IT5        IT19      "
+    "IT6  IT13  IT20  IT26"
+    "IT7        IT21      "
+    "IT8  IT14  IT22  IT27"
+    "IT28 IT28  IT28  IT28";
+
+  gap: 2.6rem 8rem;
+
+  /* grid-auto-flow: row; */
+  /* grid-auto-rows: 600px; */
+}
+
+#main-page div > p {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+#main-page iframe {
+  margin-top: 4rem;
+}
+
+#trailer-grid-item1 {
+  /* grid-column: 1 / 2;
+  grid-row: 1 / 2; */
+
+  grid-area: IT1;
+}
+
+#trailer-grid-item2 {
+  grid-area: IT2;
+}
+
+#trailer-grid-item3 {
+  grid-area: IT3;
+}
+
+#trailer-grid-item4 {
+  grid-area: IT4;
+}
+
+#trailer-grid-item5 {
+  grid-area: IT5;
+}
+
+#trailer-grid-item6 {
+  grid-area: IT6;
+}
+
+#trailer-grid-item7 {
+  grid-area: IT7;
+}
+
+#trailer-grid-item8 {
+  grid-area: IT8;
+}
+
+/* #trailer-grid-item9 {
+  grid-area: IT9;
+} */
+
+#trailer-grid-item10 {
+  grid-area: IT10;
+}
+
+#trailer-grid-item11 {
+  grid-area: IT11;
+}
+
+#trailer-grid-item12 {
+  grid-area: IT12;
+}
+
+#trailer-grid-item13 {
+  grid-area: IT13;
+}
+
+#trailer-grid-item14 {
+  grid-area: IT14;
+}
+
+#trailer-grid-item15 {
+  grid-area: IT15;
+}
+
+#trailer-grid-item16 {
+  grid-area: IT16;
+}
+
+#trailer-grid-item17 {
+  grid-area: IT17;
+}
+
+#trailer-grid-item18 {
+  grid-area: IT18;
+}
+
+#trailer-grid-item19 {
+  grid-area: IT19;
+}
+
+#trailer-grid-item20 {
+  grid-area: IT20;
+}
+
+#trailer-grid-item21 {
+  grid-area: IT21;
+}
+
+#trailer-grid-item22 {
+  grid-area: IT22;
+}
+
+#trailer-grid-item23 {
+  grid-area: IT23;
+}
+
+#trailer-grid-item24 {
+  grid-area: IT24;
+}
+
+#trailer-grid-item25 {
+  grid-area: IT25;
+}
+
+#trailer-grid-item26 {
+  grid-area: IT26;
+}
+
+#trailer-grid-item27 {
+  grid-area: IT27;
+}
+
+/* * FYI: No. 28 is the "Show more" row... */
+
+#trailer-grid-item28 {
+  grid-area: IT28;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--YT-trans_black-bg-color);
+}
+
+/* * Check out my comment over there (HTML) to find out, why I chose this color which 
+   * makes the grid-item28 disappear (visually)... */
+
+/* * -------------------------------------- */
+
+#trailer-grid-item1,
+#trailer-grid-item2,
+#trailer-grid-item3,
+#trailer-grid-item4,
+#trailer-grid-item5,
+#trailer-grid-item6,
+#trailer-grid-item7,
+#trailer-grid-item8 {
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  align-items: flex-start;
+}
+
+#trailer-grid-item10,
+#trailer-grid-item11,
+#trailer-grid-item11 span,
+#trailer-grid-item12,
+#trailer-grid-item13,
+#trailer-grid-item14,
+#trailer-grid-item14 span,
+#trailer-grid-item15,
+#trailer-grid-item15 span,
+#trailer-grid-item16,
+#trailer-grid-item17,
+#trailer-grid-item18,
+#trailer-grid-item18 span,
+#trailer-grid-item19,
+#trailer-grid-item19 span,
+#trailer-grid-item20,
+#trailer-grid-item20 span,
+#trailer-grid-item21,
+#trailer-grid-item21 span,
+#trailer-grid-item22,
+#trailer-grid-item22 span {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+#trailer-grid-item23,
+#trailer-grid-item23 span,
+#trailer-grid-item24,
+#trailer-grid-item24 span,
+#trailer-grid-item25,
+#trailer-grid-item26,
+#trailer-grid-item26 span,
+#trailer-grid-item27,
+#trailer-grid-item27 span{
+  display: flex;
+  flex-direction: column;
+  justify-items: end;
+  align-items: flex-end;
+}
+
+/* .iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+/* ! ---------------------- End of main-(video)-section --------------------- */
